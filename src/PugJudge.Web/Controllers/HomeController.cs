@@ -27,5 +27,10 @@ namespace PugJudge.Web.Controllers
         {
             return View();
         }
+
+        public IActionResult Lookup()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
