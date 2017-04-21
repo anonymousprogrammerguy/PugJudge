@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PugJudge.Service.Lookup;
 
 namespace PugJudge.Web.Controllers
 {
@@ -28,9 +29,13 @@ namespace PugJudge.Web.Controllers
             return View();
         }
 
-        public IActionResult Lookup()
+        public IActionResult Lookup(string name, string realm)
         {
-            throw new System.NotImplementedException();
+            var service = new LookupService();
+
+            var response = service.LookupCharacter(name, realm);
+
+            return View(response);
         }
     }
 }

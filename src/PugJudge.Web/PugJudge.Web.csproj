@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PugJudge.Domain\PugJudge.Domain.csproj" />
+    <ProjectReference Include="..\PugJudge.Service\PugJudge.Service.csproj" />
   </ItemGroup>
 
 </Project>

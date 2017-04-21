@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{86451A7B-A85
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PugJudge.Domain", "src\PugJudge.Domain\PugJudge.Domain.csproj", "{C9B697F1-78AF-42EB-AFF1-08B984E69971}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PugJudge.Service", "src\PugJudge.Service\PugJudge.Service.csproj", "{506F0B7C-D06F-4AE4-84FB-FA8EC587E615}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{C9B697F1-78AF-42EB-AFF1-08B984E69971}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9B697F1-78AF-42EB-AFF1-08B984E69971}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9B697F1-78AF-42EB-AFF1-08B984E69971}.Release|Any CPU.Build.0 = Release|Any CPU
+		{506F0B7C-D06F-4AE4-84FB-FA8EC587E615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{506F0B7C-D06F-4AE4-84FB-FA8EC587E615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{506F0B7C-D06F-4AE4-84FB-FA8EC587E615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{506F0B7C-D06F-4AE4-84FB-FA8EC587E615}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,5 +36,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{300C91AA-A67E-45D5-B9C5-636B68308304} = {86451A7B-A856-4B93-9C80-5BB59B3A71CE}
 		{C9B697F1-78AF-42EB-AFF1-08B984E69971} = {86451A7B-A856-4B93-9C80-5BB59B3A71CE}
+		{506F0B7C-D06F-4AE4-84FB-FA8EC587E615} = {86451A7B-A856-4B93-9C80-5BB59B3A71CE}
 	EndGlobalSection
 EndGlobal
