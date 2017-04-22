@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using PugJudge.Domain.Models;
+using PugJudge.Domain.ViewModels;
 using PugJudge.Service.Lookup;
 
 namespace PugJudge.Web.Controllers
@@ -29,13 +32,16 @@ namespace PugJudge.Web.Controllers
             return View();
         }
 
-        public IActionResult Lookup(string name, string realm)
+        [HttpGet]
+        public async Task<IActionResult> Lookup(string name, string realm)
         {
             var service = new LookupService();
 
-            var response = service.LookupCharacter(name, realm);
+            var response = await service.LookupCharacter(name, realm);
 
-            return View(response);
+            var characterProgression = new CharacterProgressionViewModel(new Character{Name = name, Realm = realm}, response);
+
+            return View(characterProgression);
         }
     }
 }

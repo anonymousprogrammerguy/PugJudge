@@ -1,8 +1,41 @@
-﻿@model System.Threading.Tasks.Task<string>
+﻿@model PugJudge.Domain.ViewModels.CharacterProgressionViewModel
 
 @{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
+    ViewBag.Title = "Character Progression";
 }
 
-<h2>title</h2>
+<h2>@Model.Character.Name - @Model.Character.Realm</h2>
+<hr />
+<div>
+    @foreach (var raid in Model.Raids)
+    {
+        <div>
+            <h3>@raid.Name</h3>
+
+            <table class="table table-responsive table-striped" style="table-layout: fixed;">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>LFR</th>
+                        <th>Normal</th>
+                        <th>Heroic</th>
+                        <th>Mythic</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var boss in raid.Bosses)
+                    {
+                        <tr>
+                            <th scope="row">@boss.Name</th>
+                            <td>@boss.LfrKills</td>
+                            <td>@boss.NormalKills</td>
+                            <td>@boss.HeroicKills</td>
+                            <td>@boss.MythicKills</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <br />
+        </div>
+    }
+</div>

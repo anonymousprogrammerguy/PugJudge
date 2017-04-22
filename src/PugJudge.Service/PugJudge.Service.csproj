@@ -4,4 +4,12 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PugJudge.Domain\PugJudge.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
