@@ -6,6 +6,10 @@ namespace PugJudge.Service.Lookup
 {
     public interface ILookupService
     {
-        Task<List<Raid>> LookupCharacter(string name, string realm);
+        Task<List<Raid>> LookupCharacter(Character character);
+
+        Task<List<Raid>> GetRaidProgression(Character character);
+
+        Task<List<Achievement>> GetAchievementProgression(Character character);
     }
 }

@@ -33,13 +33,13 @@ namespace PugJudge.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Lookup(string name, string realm)
+        public async Task<IActionResult> Lookup(Character character)
         {
             var service = new LookupService();
 
-            var response = await service.LookupCharacter(name, realm);
+            var response = await service.LookupCharacter(character);
 
-            var characterProgression = new CharacterProgressionViewModel(new Character{Name = name, Realm = realm}, response);
+            var characterProgression = new CharacterProgressionViewModel(character, response);
 
             return View(characterProgression);
         }
