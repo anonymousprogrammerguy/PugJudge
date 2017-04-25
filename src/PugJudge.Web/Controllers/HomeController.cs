@@ -39,7 +39,7 @@ namespace PugJudge.Web.Controllers
 
             var response = await service.LookupCharacter(character);
 
-            var characterProgression = new CharacterProgressionViewModel(character, response);
+            var characterProgression = new CharacterProgressionViewModel(character, response, await service.GetAchievementProgression(character));
 
             return View(characterProgression);
         }

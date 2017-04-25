@@ -7,14 +7,17 @@ namespace PugJudge.Domain.ViewModels
 {
     public class CharacterProgressionViewModel
     {
-        public CharacterProgressionViewModel(Character character, List<Raid> raids)
+        public CharacterProgressionViewModel(Character character, List<Raid> raids, List<Achievement> achievements)
         {
             Character = character;
             Raids = raids;
+            Achievements = achievements;
         }
 
         public Character Character { get; set; }
 
         public List<Raid> Raids { get; set; }
+
+        public List<Achievement> Achievements { get; set; }
     }
 }
