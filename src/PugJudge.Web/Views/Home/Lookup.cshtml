@@ -1,5 +1,4 @@
-﻿@using Microsoft.AspNetCore.Mvc.ModelBinding
-@model PugJudge.Domain.ViewModels.CharacterProgressionViewModel
+﻿@model PugJudge.Domain.ViewModels.CharacterProgressionViewModel
 
 @{
     ViewBag.Title = "Character Progression";
@@ -20,7 +19,6 @@
 <div class="panel-group" id="accordion">
     @for (var i = 0; i < Model.Raids.Count; i++)
     {
-
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
