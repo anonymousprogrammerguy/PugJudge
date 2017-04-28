@@ -124,5 +124,23 @@ namespace PugJudge.Service.Lookup
                 return achievements;
             }
         }
+
+        public async Task<int> GetCharacterItemLevel(Character character)
+        {
+            string response;
+
+            // Query Blizzard API for character progression.
+            using (var client = new HttpClient())
+            {
+                response = await client.GetStringAsync(
+                    $"https://us.api.battle.net/wow/character/{character.Realm}/{character.Name}?fields=items&locale=en_US&apikey=vdq5nvkccw77cf373edfs6bjh4mgxh7h");
+            }
+
+            var json = JsonConvert.DeserializeObject<JObject>(response);
+
+            var itemLevel = (int) json.GetValue("items")["averageItemLevelEquipped"];
+
+            return itemLevel;
+        }
     }
 }

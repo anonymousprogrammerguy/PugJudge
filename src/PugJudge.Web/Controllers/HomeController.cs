@@ -53,6 +53,8 @@ namespace PugJudge.Web.Controllers
             else if (characterProgression.Achievements.Count >= 8)
                 characterProgression.ProgressionClass = "text-success";
 
+            characterProgression.Character.ItemLevel = await service.GetCharacterItemLevel(character);
+
             return View(characterProgression);
         }
     }

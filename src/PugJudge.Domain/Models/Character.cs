@@ -9,5 +9,7 @@ namespace PugJudge.Domain.Models
         public string Name { get; set; }
 
         public string Realm { get; set; }
+
+        public int ItemLevel { get; set; }
     }
 }
