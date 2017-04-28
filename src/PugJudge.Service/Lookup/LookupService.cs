@@ -87,34 +87,34 @@ namespace PugJudge.Service.Lookup
                     switch (achievement.Id)
                     {
                         case 10840:
-                            achievement.Title = "Mythic: Skorpyron";
+                            achievement.Title = "Skorpyron";
                             break;
                         case 10842:
-                            achievement.Title = "Mythic: Chronomatic Anomaly";
+                            achievement.Title = "Chronomatic Anomaly";
                             break;
                         case 10843:
-                            achievement.Title = "Mythic: Trilliax";
+                            achievement.Title = "Trilliax";
                             break;
                         case 10844:
-                            achievement.Title = "Mythic: Spellblade Aluriel";
+                            achievement.Title = "Spellblade Aluriel";
                             break;
                         case 10845:
-                            achievement.Title = "Mythic: Star Augur Etraeus";
+                            achievement.Title = "Star Augur Etraeus";
                             break;
                         case 10846:
-                            achievement.Title = "Mythic: High Botanist Tel\'arn";
+                            achievement.Title = "High Botanist Tel\'arn";
                             break;
                         case 10847:
-                            achievement.Title = "Mythic: Tichondrius";
+                            achievement.Title = "Tichondrius";
                             break;
                         case 10848:
-                            achievement.Title = "Mythic: Krosus";
+                            achievement.Title = "Krosus";
                             break;
                         case 10849:
-                            achievement.Title = "Mythic: Grand Magistrix Elisande";
+                            achievement.Title = "Grand Magistrix Elisande";
                             break;
                         case 10850:
-                            achievement.Title = "Mythic: Gul\'dan";
+                            achievement.Title = "Gul\'dan";
                             break;
                         default:
                             achievement.Title = "Error";

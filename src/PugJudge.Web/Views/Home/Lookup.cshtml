@@ -7,6 +7,7 @@
 <h2>@Model.Character.Name - @Model.Character.Realm</h2>
 <hr/>
 <div>
+    <h3 class=@Model.ProgressionClass>@Model.Achievements.Count/10 Mythic Nighthold</h3>
     @foreach (var achievement in Model.Achievements)
     {
         <div>

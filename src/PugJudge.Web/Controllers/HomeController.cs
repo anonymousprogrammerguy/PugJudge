@@ -41,6 +41,18 @@ namespace PugJudge.Web.Controllers
 
             var characterProgression = new CharacterProgressionViewModel(character, response, await service.GetAchievementProgression(character));
 
+            // Bad player
+            if (characterProgression.Achievements.Count <= 3)
+                characterProgression.ProgressionClass = "text-danger";
+
+            // Decent player
+            else if (characterProgression.Achievements.Count >= 4 && characterProgression.Achievements.Count <= 7)
+                characterProgression.ProgressionClass = "text-warning";
+
+            // Good player
+            else if (characterProgression.Achievements.Count >= 8)
+                characterProgression.ProgressionClass = "text-success";
+
             return View(characterProgression);
         }
     }

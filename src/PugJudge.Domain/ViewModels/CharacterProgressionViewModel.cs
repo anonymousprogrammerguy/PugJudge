@@ -19,5 +19,7 @@ namespace PugJudge.Domain.ViewModels
         public List<Raid> Raids { get; set; }
 
         public List<Achievement> Achievements { get; set; }
+
+        public string ProgressionClass { get; set; } = "text-success";
     }
 }
