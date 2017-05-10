@@ -6,52 +6,71 @@
 
 <h2>@Model.Character.Name - @Model.Character.Realm [@Model.Character.ItemLevel]</h2>
 <hr/>
-<div>
-    <h3 class=@Model.ProgressionClass>@Model.Achievements.Count/10 Mythic Nighthold</h3>
-    @foreach (var achievement in Model.Achievements)
-    {
-        <div>
-            @achievement.Title
-        </div>
-    }
+<div class="row">
+    <div class="col-lg-4 col-md-4">
+        <h3 class=@Model.ProgressionClass>@Model.Achievements.Count/10 Mythic Nighthold</h3>
+        @foreach (var achievement in Model.Achievements)
+        {
+            <div>
+                @achievement.Title
+            </div>
+        }
+    </div>
+    <div class="col-lg-4 col-md-4">
+        <h3>Mythic+</h3>
+        TODO
+    </div>
+    <div class="col-lg-4 col-md-4">
+        <h3>PvP</h3>
+        @foreach (var bracket in Model.PvPBrackets)
+        {
+            <div>
+                @bracket.Title: @bracket.Rating
+            </div>
+        }
+    </div>
 </div>
 <hr/>
-<h4>Kill Details</h4>
-<div class="panel-group" id="accordion">
-    @for (var i = 0; i < Model.Raids.Count; i++)
-    {
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href=@("#collapse" + i)>
-                        @Model.Raids[i].Name</a>
-                </h4>
-            </div>
-            <div id=@("collapse" + i) class="panel-collapse collapse">
-                <table class="table table-responsive table-striped" style="table-layout: fixed;">
-                    <thead>
-                    <tr>
-                        <th></th>
-                        <th>LFR</th>
-                        <th>Normal</th>
-                        <th>Heroic</th>
-                        <th>Mythic</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach (var boss in Model.Raids[i].Bosses)
-                    {
-                        <tr>
-                            <th scope="row">@boss.Name</th>
-                            <td>@boss.LfrKills</td>
-                            <td>@boss.NormalKills</td>
-                            <td>@boss.HeroicKills</td>
-                            <td>@boss.MythicKills</td>
-                        </tr>
-                    }
-                    </tbody>
-                </table>
-            </div>
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        <h4>Kill Details</h4>
+        <div class="panel-group" id="accordion">
+            @for (var i = 0; i < Model.Raids.Count; i++)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href=@("#collapse" + i)>
+                                @Model.Raids[i].Name</a>
+                        </h4>
+                    </div>
+                    <div id=@("collapse" + i) class="panel-collapse collapse">
+                        <table class="table table-responsive table-striped" style="table-layout: fixed;">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>LFR</th>
+                                <th>Normal</th>
+                                <th>Heroic</th>
+                                <th>Mythic</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach (var boss in Model.Raids[i].Bosses)
+                            {
+                                <tr>
+                                    <th scope="row">@boss.Name</th>
+                                    <td>@boss.LfrKills</td>
+                                    <td>@boss.NormalKills</td>
+                                    <td>@boss.HeroicKills</td>
+                                    <td>@boss.MythicKills</td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
         </div>
-    }
+    </div>
 </div>

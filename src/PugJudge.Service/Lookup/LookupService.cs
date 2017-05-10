@@ -142,5 +142,39 @@ namespace PugJudge.Service.Lookup
 
             return itemLevel;
         }
+
+        public async Task<List<PvPBracket>> GetCharacterPvP(Character character)
+        {
+            string response;
+
+            // Query Blizzard API for character progression.
+            using (var client = new HttpClient())
+            {
+                response = await client.GetStringAsync(
+                    $"https://us.api.battle.net/wow/character/{character.Realm}/{character.Name}?fields=pvp&locale=en_US&apikey=vdq5nvkccw77cf373edfs6bjh4mgxh7h");
+            }
+
+            var json = JsonConvert.DeserializeObject<JObject>(response);
+
+            // Get each of the PvP brackets.
+            var brackets = new List<PvPBracket>
+            {
+                // 2v2
+                json.GetValue("pvp")["brackets"]["ARENA_BRACKET_2v2"].ToObject<PvPBracket>(),
+
+                // 3v3
+                json.GetValue("pvp")["brackets"]["ARENA_BRACKET_3v3"].ToObject<PvPBracket>(),
+
+                // RBG
+                json.GetValue("pvp")["brackets"]["ARENA_BRACKET_RBG"].ToObject<PvPBracket>()
+            };
+
+            // Set the bracket titles.
+            brackets[0].Title = "2v2";
+            brackets[1].Title = "3v3";
+            brackets[2].Title = "RBG";
+
+            return brackets;
+        }
     }
 }

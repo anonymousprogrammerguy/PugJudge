@@ -13,5 +13,7 @@ namespace PugJudge.Service.Lookup
         Task<List<Achievement>> GetAchievementProgression(Character character);
 
         Task<int> GetCharacterItemLevel(Character character);
+
+        Task<List<PvPBracket>> GetCharacterPvP(Character character);
     }
 }

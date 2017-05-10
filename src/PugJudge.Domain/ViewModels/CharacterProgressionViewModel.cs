@@ -20,6 +20,8 @@ namespace PugJudge.Domain.ViewModels
 
         public List<Achievement> Achievements { get; set; }
 
+        public List<PvPBracket> PvPBrackets { get; set; }
+
         public string ProgressionClass { get; set; } = "text-success";
     }
 }

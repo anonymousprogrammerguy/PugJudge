@@ -39,7 +39,8 @@ namespace PugJudge.Web.Controllers
 
             var response = await service.LookupCharacter(character);
 
-            var characterProgression = new CharacterProgressionViewModel(character, response, await service.GetAchievementProgression(character));
+            var characterProgression = new CharacterProgressionViewModel(character, response,
+                await service.GetAchievementProgression(character));
 
             // Bad player
             if (characterProgression.Achievements.Count <= 3)
@@ -54,6 +55,8 @@ namespace PugJudge.Web.Controllers
                 characterProgression.ProgressionClass = "text-success";
 
             characterProgression.Character.ItemLevel = await service.GetCharacterItemLevel(character);
+
+            characterProgression.PvPBrackets = await service.GetCharacterPvP(character);
 
             return View(characterProgression);
         }
