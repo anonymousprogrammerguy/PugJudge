@@ -22,12 +22,16 @@
     </div>
     <div class="col-lg-4 col-md-4">
         <h3>PvP</h3>
-        @foreach (var bracket in Model.PvPBrackets)
-        {
-            <div>
-                @bracket.Title: @bracket.Rating
-            </div>
-        }
+        <div class="row">
+            @foreach (var bracket in Model.PvPBrackets)
+            {
+                <div class="col-lg-4 col-md-4">
+                    <strong>@bracket.Title</strong>
+                    <div>CR: @bracket.Rating</div>
+                    <div>Best: TODO</div>
+                </div>
+            }
+        </div>
     </div>
 </div>
 <hr/>
